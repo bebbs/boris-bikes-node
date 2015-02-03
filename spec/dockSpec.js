@@ -19,4 +19,21 @@ describe('Dock', function() {
     expect(dock.bikes.length).toEqual(1);
   });
 
+  it('can release a bike', function() {
+    dock.acceptBike(bike);
+    dock.releaseBike();
+    expect(dock.bikes.length).toEqual(0);
+  });
+
+  it('should know when it\'s full', function() {
+    for(i = 0; i < 10; i++) {
+      bike = new Bike();
+      dock.acceptBike(bike);
+    };
+    
+    expect(dock).toBeFull();
+  });
+
+
+
 });
