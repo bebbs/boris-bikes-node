@@ -1,11 +1,16 @@
 var Bike = require('../js/bike')
 
-describe("Bike", function() {
+describe("Bike", function() { 
+
+  var bike;
+
+  beforeEach(function() {
+    bike = new Bike();
+  });
 
   describe('by default', function() {
 
     it("should not be broken", function() {
-      var bike = new Bike();
       expect(bike.isBroken()).toBe(false);
     });
 
@@ -13,9 +18,15 @@ describe("Bike", function() {
 
   describe('should be able to', function() {
 
-    it('break', function() {
-      bike.break()
+    it('be broken', function() {
+      bike.break();
       expect(bike.isBroken()).toBe(true);
+    });
+
+    it('be fixed', function() {
+      bike.break();
+      bike.fix();
+      expect(bike.isBroken()).toBe(false);
     });
 
   });

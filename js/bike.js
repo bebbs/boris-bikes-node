@@ -1,9 +1,13 @@
 var Bike = function() {
-  this.broken = false
+  this.broken = false;
 };
 
 Bike.prototype.isBroken = function() {
-  return this.broken
+  return this.broken;
 };
 
-module.exports = Bike
+Bike.prototype.break = function() {
+  this.broken = true;
+};
+
+module.exports = Bike;
