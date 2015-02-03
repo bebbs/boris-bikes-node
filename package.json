@@ -1,0 +1,22 @@
+{
+  "name": "borisbikesnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bebbs/boris-bikes-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bebbs/boris-bikes-node/issues"
+  },
+  "homepage": "https://github.com/bebbs/boris-bikes-node",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
