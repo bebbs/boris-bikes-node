@@ -30,10 +30,19 @@ describe('Dock', function() {
       bike = new Bike();
       dock.acceptBike(bike);
     };
-    
-    expect(dock).toBeFull();
+    expect(dock.isFull()).toBe(true);
   });
 
+  it('should not accept a bike if it\'s full', function() {
+    for(i = 0; i < 10; i++) {
+      bike = new Bike();
+      dock.acceptBike(bike);
+    };
+    var error = function() {
+    dock.acceptBike(bike);
+  };
 
+  expect(error).toThrow('Dock is full!');
+  });
 
 });

@@ -11,4 +11,8 @@ Dock.prototype.releaseBike = function() {
   this.bikes.pop();
 };
 
+Dock.prototype.isFull = function() {
+  return this.bikes.length === this.capacity
+};
+
 module.exports = Dock;
