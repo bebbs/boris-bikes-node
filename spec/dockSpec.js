@@ -39,10 +39,18 @@ describe('Dock', function() {
       dock.acceptBike(bike);
     };
     var error = function() {
-    dock.acceptBike(bike);
-  };
+      dock.acceptBike(bike);
+    };
 
   expect(error).toThrow('Dock is full!');
+  });
+
+  it('should not release a bike if it\'s empty', function() {
+    var error = function() {
+      dock.releaseBike();
+    };
+
+    expect(error).toThrow('Dock is full!');
   });
 
 });

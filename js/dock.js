@@ -4,7 +4,11 @@ var Dock = function() {
 };
 
 Dock.prototype.acceptBike = function(bike) {
-  this.bikes.push(bike);
+  if (this.isFull()) {
+    throw 'Dock is full!';
+  } else {
+    this.bikes.push(bike);
+  }
 };
 
 Dock.prototype.releaseBike = function() {
